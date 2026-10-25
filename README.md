@@ -125,7 +125,7 @@ Para verificar estos resultados, necesitas:
 - Dependencias: `pip install -r requirements.txt`
 - Un archivo WAV estéreo de 44.1 kHz (colócalo en `samples/original.wav`)
 
-Ejecuta con terminal en ruta de terminal integrada /src:
+Ejecuta con terminal en ruta /src:
 ```bash
 python main.py
 ```
