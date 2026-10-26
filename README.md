@@ -69,6 +69,10 @@ La codificación con pérdida (como MP3) aproxima la señal original. Se investi
 
 ## 6. Próximos pasos
 
+### Desafío Arquitectónico: Coexistencia de Metadatos
+V25 almacena su payload en etiquetas ID3v2. Esto presenta un riesgo de conflicto con los metadatos de usuario (portadas, letras, etc.). En el ecosistema MP3, no existe una separación lógica entre "datos de audio" y "datos de usuario" como sí ocurre en los contenedores MP4/M4A. En futuras iteraciones (V26+), se evaluará la migración del payload a un bloque adjunto al final del archivo (post-frame) o el uso de la especificación APEv2 para garantizar la persistencia de la mejora incluso si el archivo es editado por iTunes o Mp3tag.
+
+Si se logrará superar esto la lógica de evolución natural ideal y deseada es:
 1. **Fase 1 (Reproducibilidad):** Resolver la discrepancia de tamaño de payload (643 KB vs 1029 KB, probablemente binario vs Base64).
 2. **Fase 2 (Robustez):** Probar con 10 audios distintos (voz, rock, clásica).
 3. **Fase 3 (Comparación):** Medir contra Opus a 88.5 kbps.
